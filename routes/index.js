@@ -14,7 +14,11 @@ router.get('/login', function(req, res, next) {
 
 /* GET main portal */
 router.get('/everyone', function(req, res, next) {
-  res.render('everyone', { title: 'DateHub: Main'})
+  User.find({}, function(err, users) {
+    if (err) console.log(err);
+    console.log(users);
+    res.render('everyone', { title: 'DateHub: Main', users: users})
+  });
 });
 
 /* GET signup page */
