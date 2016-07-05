@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-
+var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
 
 /* GET home page. */
@@ -32,6 +32,10 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic})
 });
 
+router.get('/logout', authWall, function(req, res){
+  req.session.destroy(function(){
+  });
+});
 /* LOG IN */
 router.post('/login', function(req, res, next) {
   User.findOne({ email: req.body.email }).exec(function(err, user) {
