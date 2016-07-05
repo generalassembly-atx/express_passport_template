@@ -17,6 +17,25 @@ router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'DateHub: Signup'});
 });
 
+/* GET main profile page */
+router.get('/profile', function(req, res, next) {
+  res.render('profile')
+});
+
+/* LOG IN */
+router.post('/login', function(req, res, next) {
+  User.findOne({ email: req.body.email }).exec(function(err, user) {
+   user.validPassword(req.body.password, function(err, isMatch) {
+     if (isMatch) {
+       req.session.currentUserID = user.id;
+       console.log(req.session);
+     }
+     console.log('is match', isMatch);
+     res.redirect('profile');
+   });
+ });
+})
+
 /* CREATE USER */
 router.post('/signup', function(req, res, next){
 
