@@ -26,11 +26,10 @@ router.post('/signup', function(req, res, next){
     email: req.body.email,
     password: req.body.password,
     phone: req.body.phone,
-    image_url: req.body.image_url,
-    profile_id: Number
+    image_url: req.body.image_url
   });
 
-  newUser.save(function(err, recipe){
+  newUser.save(function(err, user){
     if (err) console.log(err);
     res.redirect('login')
   })
