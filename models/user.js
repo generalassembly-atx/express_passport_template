@@ -1,11 +1,15 @@
 var mongoose = require('mongoose');
-var bcrypt = require('bcrypt');
+var bcryptjs = require('bcryptjs');
 
 var SALT_WORK_FACTOR = 10;
 
 var userSchema = new mongoose.Schema({
+  firstname: { type: String, required: true },
+  lastname: { type: String, required: true },
   email: { type: String, required: true, index: { unique: true }},
-  password: { type: String, required: true }
+  password: { type: String, required: true },
+  phone: { type: Number, required:true },
+  image_url: {type: String, required:true },
 });
 
 userSchema.pre('save', function(next) {
@@ -15,11 +19,11 @@ userSchema.pre('save', function(next) {
   if (!user.isModified('password')) return next();
 
   // generate a salt
-  bcrypt.genSalt(SALT_WORK_FACTOR, function(err, salt) {
+  bcryptjs.genSalt(SALT_WORK_FACTOR, function(err, salt) {
     if (err) return next(err);
 
     // hash the password along with our new salt
-    bcrypt.hash(user.password, salt, function(err, hash) {
+    bcryptjs.hash(user.password, salt, function(err, hash) {
       if (err) return next(err);
 
       // override the cleartext password with the hashed one
@@ -30,7 +34,8 @@ userSchema.pre('save', function(next) {
 });
 
 userSchema.methods.validPassword = function(candidatePassword, cb) {
-  return bcrypt.compareSync(candidatePassword, this.password);
+  return bcryptjs.compareSync(candidatePassword, this.password);
 };
 
+var User = mongoose.model('User', userSchema);
 module.exports = mongoose.model('users', userSchema);

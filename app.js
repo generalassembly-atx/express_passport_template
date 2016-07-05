@@ -6,11 +6,11 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
-var mongoose = require('mongoose');
-var passport = require('passport');
-var LocalStrategy = require('passport-local').Strategy;
 
-mongoose.connect(/* Put the environment variable containing your mLab connection string here */);
+var hello = require('worldzzzzz');
+
+var passport = require('passport');
+var LocalStrategy = require('passport-local').Strategy
 
 var routes = require('./routes/index');
 var users = require('./routes/users');
@@ -30,6 +30,22 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(flash());
+
+// Method override – NEW CODE
+var connect = require('connect');
+var methodOverride = require('method-override');
+app.use(methodOverride(function(req, res){
+  if (req.body && typeof req.body === 'object' && '_method' in req.body) {
+    // look in urlencoded POST bodies and delete it
+    var method = req.body._method
+    delete req.body._method
+    return method
+  }
+}))
+
+// Mongoose connection – NEW CODE
+var mongoose = require('mongoose');
+mongoose.connect(process.env.dev_social);
 
 app.use(session({
   secret: 'keyboard cat', // You probably want to create another environment variable containing a random string and use that here instead of keyboard cat
@@ -74,6 +90,8 @@ app.use(function(req, res, next) {
   res.locals.user = req.user || null;
   next();
 });
+
+
 
 app.use('/', routes);
 app.use('/users', users);

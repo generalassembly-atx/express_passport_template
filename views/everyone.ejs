@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+
+    <% users.forEach(function(user) { %>
+    <div class="people">
+// May need to make different route. Depending on how we route
+      <a href="<%= user._id %>"><h3><%= user.firstname %></h3></a>
+      // Will likely need another function calling the for each of every profile to match user name and picture to profile's about me
+      <img src="<%= user.image_url %>" alt="<%= user.firstname %>">
+    </div>
+    <% }) %>
+  </body>
+</html>
