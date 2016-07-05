@@ -6,7 +6,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+<<<<<<< HEAD
     "bcryptjs": "^0.8.7",
+=======
+    "bcryptjs": "^2.3.00",
+>>>>>>> cac9956c365233bf116e723a2b2b6dd4b8c7c35a
     "body-parser": "~1.13.2",
     "connect-flash": "^0.1.1",
     "cookie-parser": "~1.3.5",
