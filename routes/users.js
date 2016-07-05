@@ -9,11 +9,6 @@ router.get('/', authWall, function(req, res, next) {
   res.send("Welcome back, " + req.user.email);
 });
 
-// /* GET home page. */
-// router.get('/new', function(req, res, next) {
-//   res.render('users/new', { title: 'Express' });
-// });
-
 /* POST signup form */
 router.post('/', function(req, res, next) {
   var user = new User(req.body);
