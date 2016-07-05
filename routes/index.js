@@ -9,12 +9,12 @@ router.get('/', function(req, res, next) {
 });
 /* GET login page */
 router.get('/login', function(req, res, next) {
-  res.render('login');
+  res.render('login', { title: 'DateHub: Login'});
 });
 
 /* GET signup page */
 router.get('/signup', function(req, res, next) {
-  res.render('signup');
+  res.render('signup', { title: 'DateHub: Signup'});
 });
 
 /* CREATE USER */
