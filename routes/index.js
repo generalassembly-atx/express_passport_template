@@ -12,6 +12,11 @@ router.get('/login', function(req, res, next) {
   res.render('login', { title: 'DateHub: Login'});
 });
 
+/* GET main portal */
+router.get('/everyone', function(req, res, next) {
+  res.render('everyone', { title: 'DateHub: Main'})
+});
+
 /* GET signup page */
 router.get('/signup', function(req, res, next) {
   res.render('signup', { title: 'DateHub: Signup'});
