@@ -7,7 +7,7 @@ var bodyParser = require('body-parser');
 var session = require('express-session');
 var flash = require('connect-flash');
 
-//you see this??
+var hello = require('world');
 
 var passport = require('passport');
 var LocalStrategy = require('passport-local').Strategy
