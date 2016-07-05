@@ -13,7 +13,7 @@ router.get('/login', function(req, res, next) {
 });
 
 /* GET main portal */
-router.get('/everyone', function(req, res, next) {
+router.get('/everyone', authWall, function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) console.log(err);
     console.log(users);
