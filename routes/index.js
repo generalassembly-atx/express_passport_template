@@ -19,19 +19,25 @@ router.get('/signup', function(req, res, next) {
 
 /* GET main profile page */
 router.get('/profile', function(req, res, next) {
-  res.render('profile')
+  console.log(req.session);
+  res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic})
 });
 
 /* LOG IN */
 router.post('/login', function(req, res, next) {
   User.findOne({ email: req.body.email }).exec(function(err, user) {
-   user.validPassword(req.body.password, function(err, isMatch) {
+   user.comparePassword(req.body.password, function(err, isMatch) {
      if (isMatch) {
        req.session.currentUserID = user.id;
+       req.session.currentUserFN = user.firstname;
+       req.session.currentUserPic = user.image_url;
        console.log(req.session);
+       console.log('is match', isMatch);
+       res.redirect('profile');
      }
-     console.log('is match', isMatch);
-     res.redirect('profile');
+     else {
+       res.send('YOU ARE WRONG');
+     }
    });
  });
 })

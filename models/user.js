@@ -33,8 +33,11 @@ userSchema.pre('save', function(next) {
   });
 });
 
-userSchema.methods.validPassword = function(candidatePassword, cb) {
-  return bcryptjs.compareSync(candidatePassword, this.password);
+userSchema.methods.comparePassword = function(candidatePassword, cb) {
+  bcryptjs.compare(candidatePassword, this.password, function(err, isMatch) {
+    if (err) return cb(err);
+    cb(null, isMatch);
+  });
 };
 
 var User = mongoose.model('User', userSchema);
