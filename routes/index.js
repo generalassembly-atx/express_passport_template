@@ -29,7 +29,12 @@ router.get('/signup', function(req, res, next) {
 /* GET main profile page */
 router.get('/profile', function(req, res, next) {
   console.log(req.session);
-  res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic})
+  res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
+});
+
+router.get('/profileinfo', function(req, res, next) {
+  console.log(req.session);
+  res.render('profileinfo', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
 });
 
 router.get('/logout', authWall, function(req, res){
@@ -72,6 +77,9 @@ router.post('/signup', function(req, res, next){
     res.redirect('login')
   })
 });
+
+/* CREATE PROFILE WITHIN USER */
+
 
 
 module.exports = router;
