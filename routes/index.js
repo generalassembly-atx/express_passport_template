@@ -19,18 +19,17 @@ router.get('/signup', function(req, res, next) {
 
 /* CREATE USER */
 router.post('/signup', function(req, res, next){
-  // redirect to index
+
   var newUser = new User({
     firstname: req.body.firstname,
     lastname: req.body.lastname,
     email: req.body.email,
     password: req.body.password,
     phone: req.body.phone,
-    image_url: req.body.image_url,
-    profile_id: Number
+    image_url: req.body.image_url
   });
 
-  newUser.save(function(err, recipe){
+  newUser.save(function(err, user){
     if (err) console.log(err);
     res.redirect('login')
   })
