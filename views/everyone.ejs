@@ -1,10 +1,11 @@
 <% include partials/head%>
   <body>
+    <% include partials/navbar%>
     <h1><%= title %></h1>
-
+    <% users.forEach(function(user) { %>
     <div class="people">
-      // May need to make different route. Depending on how we route
-      // Will likely need another function calling the for each of every profile to match user name and picture to profile's about me
-    </div>
+      <h2> <%= user.firstname %>, <%= user.lastname %> </h2>
+      <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
+      <% }) %>
   </body>
 </html>
