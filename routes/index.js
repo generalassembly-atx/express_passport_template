@@ -50,8 +50,12 @@ router.get('/profileinfo', function(req, res, next) {
 });
 
 /* POST friend request */
-router.post('/frequest', function(req, res, next) {
-
+router.post('/frequest/:id', function(req, res, next) {
+  User.findById(req.params.id, function(err, user) {
+    req.session.currentUserFriends.push(user.id);
+    console.log(req.session.currentUserFriends);
+    res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
+  })
 })
 /* LOG OUT */
 router.get('/logout', function(req, res){
@@ -68,6 +72,7 @@ router.post('/login', function(req, res, next) {
        req.session.currentUserID = user.id;
        req.session.currentUserFN = user.firstname;
        req.session.currentUserPic = user.image_url;
+       req.session.currentUserFriends = user.friends;
        console.log(req.session);
        console.log('is match', isMatch);
        res.redirect('profile');

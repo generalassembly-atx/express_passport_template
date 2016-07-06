@@ -10,6 +10,7 @@ var userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   phone: { type: Number, required:true },
   image_url: {type: String, required:true },
+  friends: {type: Array}
 });
 
 userSchema.pre('save', function(next) {
