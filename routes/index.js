@@ -30,7 +30,7 @@ router.get('/signup', function(req, res, next) {
 /* GET main profile page */
 router.get('/profile', function(req, res, next) {
   // console.log(req.session);
-  res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
+  res.render('profile', { title: 'DateHub: Profile'});
 });
 
 /* GET another user's profile page */
@@ -38,14 +38,14 @@ router.get('/profile/:id', function(req, res, next) {
   // var id = req.params.id;
   User.findById(req.params.id, function(err, user) {
     // console.log(user);
-    res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
+    res.render('profile', { title: 'DateHub: Profile'});
   })
 });
 
 /* GET profile info */
 router.get('/profileinfo', function(req, res, next) {
-  console.log(req.session);
-  res.render('profileinfo', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
+  // console.log(req.session);
+  res.render('profileinfo', { title: 'DateHub: Profile'});
 });
 
 /* POST friend request */
@@ -53,7 +53,7 @@ router.post('/frequest/:id', function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
     req.session.currentUserFriends.push(user.id);
     console.log(req.session.currentUserFriends);
-    res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
+    res.redirect('/profile')
   })
 })
 /* LOG OUT */
@@ -69,9 +69,6 @@ router.post('/login', function(req, res, next) {
    user.comparePassword(req.body.password, function(err, isMatch) {
      if (isMatch) {
        req.session.currentUserID = user.id;
-       req.session.currentUserFN = user.firstname;
-       req.session.currentUserPic = user.image_url;
-       req.session.currentUserFriends = user.friends;
        console.log(req.session);
        console.log('is match', isMatch);
        res.redirect('profile');
@@ -100,21 +97,5 @@ router.post('/signup', function(req, res, next){
     res.redirect('login')
   })
 });
-
-/* CREATE PROFILE WITHIN USER */
-router.post('/profile', function(req, res, next){
-
-  var newProfile = new Profile({
-    location: req.body.location,
-    aboutme: req.body.aboutme,
-    age: req.body.age
-  });
-
-  newProfile.save(function(err, profile){
-    if (err) console.log(err);
-    res.render('testprofile', {title: 'something goes here'})
-  })
-});
-
 
 module.exports = router;

@@ -86,11 +86,24 @@ passport.deserializeUser(function(id, done) {
 });
 
 app.use(function(req, res, next) {
-  res.locals.user = req.user || null;
-  next();
+  if (req.session.currentUserID) {
+    User.findById(req.session.currentUserID, function(err, user) {
+      if (err) return next(err);
+      console.log(user);
+      req.session.currentUser = user;
+      next();
+    });
+  }
+  else {
+    next();
+  }
 });
 
-
+app.use(function(req, res, next) {
+  console.log(req.session.currentUser);
+  res.locals.user = req.session.currentUser || null;
+  next();
+});
 
 app.use('/', routes);
 app.use('/users', users);
