@@ -1,8 +1,8 @@
 <% include partials/head %>
 <body>
   <% include partials/navbar %>
-  <h1> Hello, <%= user.firstname %></h1>
-  <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;" alt="<%= user.firstname %>">
+  <h1> Hello, <%= firstname %></h1>
+  <img src="<%= image_url %>" style="max-height: 100px; max-width: 100px;" alt="<%= firstname %>">
   <form action="/profileinfo" method="get" >
       <input type="submit" value="Profile Info">
     </form>

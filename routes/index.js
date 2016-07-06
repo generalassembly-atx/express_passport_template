@@ -40,7 +40,6 @@ router.get('/profile/:id', function(req, res, next) {
     // console.log(user);
     res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
   })
-
 });
 
 /* GET profile info */
