@@ -29,17 +29,18 @@ router.get('/signup', function(req, res, next) {
 
 /* GET main profile page */
 router.get('/profile', function(req, res, next) {
-  console.log(req.session);
+  // console.log(req.session);
   res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
 });
 
 /* GET another user's profile page */
 router.get('/profile/:id', function(req, res, next) {
-  var id = req.params.id;
-  User.findById(id, function(err, user) {
-    console.log(user);
-    res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
-  })
+  // var id = req.params.id;
+  console.log(req.params.id);
+  User.findById(req.params.id, function(err, user) {
+    // console.log(user);
+    res.render('profile', { title: 'DateHub: Profile', user: user});
+  });
 });
 
 /* GET profile info */
@@ -106,7 +107,7 @@ router.post('/profile', function(req, res, next){
 
   newProfile.save(function(err, profile){
     if (err) console.log(err);
-    res.render('testprofile')
+    res.render('testprofile', {title: 'something goes here'})
   })
 });
 
