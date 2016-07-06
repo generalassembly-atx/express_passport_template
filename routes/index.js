@@ -17,7 +17,7 @@ router.get('/login', function(req, res, next) {
 router.get('/everyone', function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) console.log(err);
-    console.log(users);
+    // console.log(users);
     res.render('everyone', { title: 'DateHub: Main', users: users})
   });
 });
@@ -35,9 +35,10 @@ router.get('/profile', function(req, res, next) {
 
 /* GET another user's profile page */
 router.get('/profile/:id', function(req, res, next) {
-  // var id = req.params.id;
-  User.findById(req.params.id, function(err, user) {
-    // console.log(user);
+  var id = req.params.id;
+  console.log(id);
+  User.findById(id, function(err, user) {
+    console.log(user);
     res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
   })
 
@@ -45,7 +46,7 @@ router.get('/profile/:id', function(req, res, next) {
 
 /* GET profile info */
 router.get('/profileinfo', function(req, res, next) {
-  console.log(req.session);
+  // console.log(req.session);
   res.render('profileinfo', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
 });
 
