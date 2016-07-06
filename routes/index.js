@@ -32,15 +32,31 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
 });
 
+/* GET another user's profile page */
+router.get('/:id/profile', function(req, res, next) {
+  var id = req.params.id;
+  User.findById(id, function(err, user) {
+    console.log(user);
+    res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
+  })
+});
+
+/* GET profile info */
 router.get('/profileinfo', function(req, res, next) {
   console.log(req.session);
   res.render('profileinfo', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
 });
 
+/* POST friend request */
+router.post('/frequest', function(req, res, next) {
+
+})
+/* LOG OUT */
 router.get('/logout', function(req, res){
   req.session.destroy(function(){
   });
 });
+
 /* LOG IN */
 router.post('/login', function(req, res, next) {
   User.findOne({ email: req.body.email }).exec(function(err, user) {

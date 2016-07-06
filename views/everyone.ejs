@@ -4,8 +4,9 @@
     <h1><%= title %></h1>
     <% users.forEach(function(user) { %>
     <div class="people">
-      <h2> <%= user.firstname %> <%= user.lastname %> </h2>
+      <a href="/<%= user._id%>/profile"> <%= user.firstname %> <%= user.lastname %> </a>
       <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
+        <input type="submit" class="btn btn-primary" value="Send Request"/>
       <% }) %>
   </body>
 </html>
