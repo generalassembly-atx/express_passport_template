@@ -13,7 +13,7 @@ router.get('/login', function(req, res, next) {
 });
 
 /* GET main portal */
-router.get('/everyone', authWall, function(req, res, next) {
+router.get('/everyone', function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) console.log(err);
     console.log(users);
@@ -37,7 +37,7 @@ router.get('/profileinfo', function(req, res, next) {
   res.render('profileinfo', { title: 'DateHub: Profile', firstname: req.session.currentUserFN, image_url: req.session.currentUserPic});
 });
 
-router.get('/logout', authWall, function(req, res){
+router.get('/logout', function(req, res){
   req.session.destroy(function(){
   });
 });

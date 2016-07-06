@@ -1,11 +1,19 @@
 <% include partials/head %>
   <body>
-    <h1><%= title %></h1>
-    <form action="/login" method="get" >
-      <input type="submit" value="login">
-    </form>
-    <form method="get" action="signup">
-      <input type="submit" value="signup">
-    </form>
+    <div class="container">
+      <h1 class="title"><%= title %></h1>
+      <div class="row" id="buttons">
+        <div class="col-6-xs">
+          <form action="/login" method="get" >
+            <input type="submit" class="btn btn-primary" value="login">
+          </form>
+        </div>
+        <div class="col-6-xs">
+          <form method="get" action="signup">
+            <input type="submit" class="btn btn-primary" value="signup">
+          </form>
+        </div>
+      </div>
+    </div>
   </body>
 </html>
