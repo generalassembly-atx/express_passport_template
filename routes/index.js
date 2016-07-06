@@ -18,7 +18,7 @@ router.get('/everyone', function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) console.log(err);
     // console.log(users);
-    res.render('everyone', { title: 'DateHub: Main', users: users})
+    res.render('everyone', { title: 'DateHub Main', users: users})
   });
 });
 
