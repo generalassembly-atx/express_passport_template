@@ -1,10 +1,14 @@
 <% include partials/head %>
 <body>
-  <h1>Login</h1>
-  <form method="post" action="/login">
-    Email: <input type="text" name="email">
-    Password: <input type="password" name="password">
-    <input type="submit" value="Login"/>
-  </form>
+  <span class="container">
+    <h1>Login</h1>
+    <div class="row" id="forms">
+      <form method="post" action="/login">
+        Email: <input type="text" name="email">
+        Password: <input type="password" name="password">
+        <input type="submit" class="btn btn-primary" value="Login"/>
+      </form>
+    </div>
+  </span>
 </body>
 </html>
