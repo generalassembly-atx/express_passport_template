@@ -54,7 +54,7 @@ router.post('/frequest/:id', function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
     req.session.currentUserFriends.push(user.id);
     console.log(req.session.currentUserFriends);
-    res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
+    res.redirect('/profile')
   })
 })
 /* LOG OUT */
@@ -113,17 +113,10 @@ router.post('/profile', function(req, res, next){
 
   newProfile.save(function(err, profile){
     if (err) console.log(err);
-    res.render('profile', { title: 'DateHub: Profile', location: req.session.location, aboutme: req.session.aboutme, age: req.session.age});
+    res.redirect('/profile');
   })
 });
 
-/* POST PROFILE INFO TO PROFILE VIEW */
-router.post('/profileinfo', function(req, res, next) {
-    // req.session.location = profile.location;
-    // req.session.aboutme = profile.aboutme;
-    // req.session.age = profile.age;
-    res.render('profile', { title: 'DateHub: Profile', location: req.session.location, aboutme: req.session.aboutme, age: req.session.age});
-});
 
 
 module.exports = router;
