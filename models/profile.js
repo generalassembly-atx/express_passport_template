@@ -7,4 +7,4 @@ var profileSchema = new mongoose.Schema({
 })
 
 var Profile = mongoose.model('Profile', profileSchema);
-mongoose.model('profiles', profileSchema);
+module.exports = mongoose.model('profiles', profileSchema);
