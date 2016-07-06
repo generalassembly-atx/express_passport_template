@@ -38,7 +38,7 @@ router.get('/profile/:id', function(req, res, next) {
   var id = req.params.id;
   console.log(id);
   User.findById(id, function(err, user) {
-    console.log(user);
+    // console.log(user);
     res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
   })
 });
@@ -108,8 +108,16 @@ router.post('/profile', function(req, res, next){
 
   newProfile.save(function(err, profile){
     if (err) console.log(err);
-    res.render('testprofile', {title: 'something goes here'})
+    res.render('profile', { title: 'DateHub: Profile', location: req.session.location, aboutme: req.session.aboutme, age: req.session.age});
   })
+});
+
+/* POST PROFILE INFO TO PROFILE VIEW */
+router.post('/profileinfo', function(req, res, next) {
+    // req.session.location = profile.location;
+    // req.session.aboutme = profile.aboutme;
+    // req.session.age = profile.age;
+    res.render('profile', { title: 'DateHub: Profile', location: req.session.location, aboutme: req.session.aboutme, age: req.session.age});
 });
 
 
