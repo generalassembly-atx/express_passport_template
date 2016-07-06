@@ -41,7 +41,6 @@ router.get('/profile/:id', function(req, res, next) {
     console.log(user);
     res.render('profile', { title: 'DateHub: Profile', firstname: user.firstname, image_url: user.image_url});
   })
-
 });
 
 /* GET profile info */
@@ -58,6 +57,7 @@ router.post('/frequest', function(req, res, next) {
 router.get('/logout', function(req, res){
   req.session.destroy(function(){
   });
+  res.render('login', {title: 'DateHub: Login'})
 });
 
 /* LOG IN */
