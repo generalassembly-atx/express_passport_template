@@ -56,6 +56,7 @@ router.post('/frequest', function(req, res, next) {
 router.get('/logout', function(req, res){
   req.session.destroy(function(){
   });
+  res.render('login', {title: 'DateHub: Login'})
 });
 
 /* LOG IN */
