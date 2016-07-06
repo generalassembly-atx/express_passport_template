@@ -7,5 +7,16 @@
       <input type="submit" value="Profile Info">
     </form>
 
+    <% function profile() { %>
+      <% if (location) { %>
+        <p><%= location %></p>
+      <% } %>
+      <% if (aboutme) { %>
+        <p><%= aboutme %></p>
+      <% } %>
+      <% if (age) { %>
+        <p><%= age %></p>
+      <% } %>
+    <% } %>
 </body>
 </html>
