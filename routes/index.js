@@ -38,7 +38,7 @@ router.get('/profile/:id', function(req, res, next) {
   // var id = req.params.id;
   User.findById(req.params.id, function(err, user) {
     // console.log(user);
-    res.render('profile', { title: 'DateHub: Profile'});
+    res.render('profile', { title: 'DateHub: Profile', user:user});
   })
 });
 
