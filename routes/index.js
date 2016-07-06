@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
-var Profile =require('../models/profile')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -41,12 +40,6 @@ router.get('/profile/:id', function(req, res, next) {
     // console.log(user);
     res.render('profile', { title: 'DateHub: Profile', user:user});
   })
-});
-
-/* GET profile info */
-router.get('/profileinfo', function(req, res, next) {
-  // console.log(req.session);
-  res.render('profileinfo', { title: 'DateHub: Profile'});
 });
 
 /* POST friend request */
@@ -90,7 +83,10 @@ router.post('/signup', function(req, res, next){
     email: req.body.email,
     password: req.body.password,
     phone: req.body.phone,
-    image_url: req.body.image_url
+    image_url: req.body.image_url,
+    location: req.body.location,
+    aboutme: req.body.aboutme,
+    age: req.body.age
   });
 
   newUser.save(function(err, user){

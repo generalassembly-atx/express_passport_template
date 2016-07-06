@@ -10,6 +10,9 @@ var userSchema = new mongoose.Schema({
   password: { type: String, required: true },
   phone: { type: Number, required:true },
   image_url: {type: String, required:true },
+  location: String,
+  aboutme: String,
+  age: Number,
   friends: {type: Array}
 });
 
