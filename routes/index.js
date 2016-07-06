@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
+var Profile =require('../models/profile')
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -95,7 +96,19 @@ router.post('/signup', function(req, res, next){
 });
 
 /* CREATE PROFILE WITHIN USER */
+router.post('/profile', function(req, res, next){
 
+  var newProfile = new Profile({
+    location: req.body.location,
+    aboutme: req.body.aboutme,
+    age: req.body.age
+  });
+
+  newProfile.save(function(err, profile){
+    if (err) console.log(err);
+    res.render('testprofile')
+  })
+});
 
 
 module.exports = router;
