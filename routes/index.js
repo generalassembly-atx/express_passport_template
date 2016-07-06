@@ -33,7 +33,7 @@ router.get('/profile', function(req, res, next) {
 });
 
 /* GET another user's profile page */
-router.get('/:id/profile', function(req, res, next) {
+router.get('/profile/:id', function(req, res, next) {
   var id = req.params.id;
   User.findById(id, function(err, user) {
     console.log(user);
