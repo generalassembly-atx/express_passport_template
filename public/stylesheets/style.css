@@ -12,7 +12,6 @@ a {
   background-color: #33adff;
 }
 
-
 #login-body {
   text-align: center;
 }
@@ -20,11 +19,21 @@ a {
   text-align: center;
 }
 
-
+.all-people {
+  width:95%;
+  position:absolute;
+}
 .title {
   text-align: center;
 }
 
 #buttons {
   text-align: center;
+}
+
+
+.user {
+  width: 31%;
+  display: inline-flex;
+  border: 3px solid #33adff;
 }
