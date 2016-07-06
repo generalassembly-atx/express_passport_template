@@ -6,11 +6,19 @@ a {
   color: #00B7FF;
 }
 .navbar-inverse .navbar-nav li a {
-  color: #ffb3ff;
+  color: white;
+}
+.navbar-inverse .navbar-nav .active a {
+  background-color: #33adff;
 }
 
 
-
+#login-body {
+  text-align: center;
+}
+#signup-body {
+  text-align: center;
+}
 
 
 .title {

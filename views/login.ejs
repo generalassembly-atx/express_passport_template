@@ -1,14 +1,18 @@
 <% include partials/head %>
 <body>
-  <span class="container">
+  <span class="container" id="login-body">
     <h1>Login</h1>
-    <div class="row" id="forms">
       <form method="post" action="/login">
-        Email: <input type="text" name="email">
-        Password: <input type="password" name="password">
-        <input type="submit" class="btn btn-primary" value="Login"/>
+        <div class="email">
+          Email: <input type="text" name="email">
+        </div>
+        <div class="password">
+          Password: <input type="password" name="password">
+        </div>
+        <div class="subbutton">
+          <input type="submit" class="btn btn-primary" value="Login"/>
+        </div>
       </form>
-    </div>
   </span>
 </body>
 </html>
