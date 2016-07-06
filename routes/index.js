@@ -32,6 +32,16 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'DateHub: Profile'});
 });
 
+// EDIT main profile page
+router.get('/:id/edit', function(req, res, next){
+  // get edit user form
+  var id = req.params.id;
+  User.findOne({_id: id }, function(err, user){
+    if (err) console.log(err);
+    res.render('edit', {user: user})
+  })
+});
+
 /* GET another user's profile page */
 router.get('/profile/:id', function(req, res, next) {
   var id = req.params.id;

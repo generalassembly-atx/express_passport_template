@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Edit Your User Information</title>
+</head>
+<body>
+
+  <form action="../profile/<%= user._id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+
+    First Name: <input type="text" name="firstname" value="<%= user.firstname %>">
+    Last Name: <input type="text" name="lastname" value="<%= user.lastname %>">
+    Email: <input type="text" name="email" value="<%= user.email %>">
+    Password: <input type="password" name="password" value="<%= user.password %>">
+    Phone: <input type="text" name="phone" value="<%= user.phone %>">
+    Profile Pic: <input type="text" name="image_url" value="<%= user.image_url %>">
+    About Me: <input type="text" name="aboutme" value="<%= user.aboutme %>">
+    Age: <input type="text" name="age" value="<%= user.age %>">
+    <input type="submit" value="Update User"/>
+  </form>
+</body>
+</html>
