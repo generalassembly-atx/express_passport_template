@@ -13,11 +13,7 @@ var userSchema = new mongoose.Schema({
   image_url: {type: String, required:true },
   location: String,
   aboutme: String,
-<<<<<<< HEAD
-  age: Number,
-=======
   age: Number
->>>>>>> b40501a461e656a4e272e226faf49a29625721b8
 });
 
 userSchema.pre('save', function(next) {
