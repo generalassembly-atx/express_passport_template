@@ -3,17 +3,17 @@
   <body>
   <div class="profile">
     <div class="left-profile">
-      <h1> <%= user.firstname %> <%= user.lastname %> </h1>
-      <img src="<%= user.image_url %>" style="max-height: 110px; max-width: 180px;" alt="<%= user.firstname %>">
-      <h2 class="location"><%= user.location %></h2>
-      <h2 class="age"><%= user.age %></h2>
+      <h1> <%= profileUser.firstname %> <%= profileUser.lastname %> </h1>
+      <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;" alt="<%= user.firstname %>">
+      <h2 class="location"><%= profileUser.location %></h2>
+      <h2 class="age"><%= profileUser.age %></h2>
       <form action="/<%= user._id %>/edit" method="get" >
         <input type="submit" class="btn btn-primary" value="Edit">
       </form>
       <form method="post" action="/frequest/<%= user._id%>">
         <input id="everyoneBut"type="submit" class="btn btn-primary" value="+Match"/>
       </form>
-      </div>
+      <p class="aboutme"><%= profileUser.aboutme %></p>
     </div>
     <p class="aboutme"><%= user.aboutme %></p>
     <div class="myPeople">
@@ -23,10 +23,8 @@
         <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
         <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
       </div>
-
       <% }) %>
     <% } %>
-    </div>
   </div>
 </body>
 </html>
