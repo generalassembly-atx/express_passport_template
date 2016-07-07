@@ -19,9 +19,9 @@ router.get('/:id', function(req, res, next) {
 });
 
 /* GET main profile page */
-router.get('/', function(req, res, next) {
-  // console.log(req.session);
-  res.render('profile', { title: 'DateHub: Profile'});
-});
+// router.get('/', function(req, res, next) {
+//   // console.log(req.session);
+//   res.render('profile', { title: 'DateHub: Profile', friends: friends});
+// });
 
 module.exports = router;
