@@ -30,7 +30,15 @@ a {
 #buttons {
   text-align: center;
 }
-
+.userName {
+  float:left;
+}
+.profilePic {
+  float:left;
+}
+.everyoneBut {
+  float:left;
+}
 .left-profile {
   position: relative;
   width:45%;

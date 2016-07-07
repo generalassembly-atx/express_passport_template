@@ -5,10 +5,10 @@
     <div class="all-people">
       <% users.forEach(function(user) { %>
       <div class="user">
-        <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
-        <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
+        <a class="userName" href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
+        <img class="profilePic" src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
         <form method="post" action="/frequest/<%= user._id%>">
-          <input type="submit" class="btn btn-primary" value="Send Request"/>
+          <input id="everyoneBut"type="submit" class="btn btn-primary" value="Send Request"/>
         </form>
       </div>
       <% }) %>
