@@ -11,7 +11,7 @@ router.post('/', function(req, res, next) {
        req.session.currentUserID = user.id;
        console.log(req.session);
        console.log('is match', isMatch);
-       res.redirect('profile');
+       res.redirect('everyone');
      }
      else {
        res.send('YOU ARE WRONG');

@@ -1,7 +1,6 @@
 <% include partials/head %>
-<body>
   <% include partials/navbar %>
-
+  <body>
   <div class="profile">
     <div class="left-profile">
       <h1> <%= user.firstname %> <%= user.lastname %> </h1>
@@ -14,7 +13,7 @@
       <form method="post" action="/frequest/<%= user._id%>">
         <input id="everyoneBut"type="submit" class="btn btn-primary" value="+Match"/>
       </form>
-
+      <p class="aboutme"><%= user.aboutme %></p>
       </div>
     </div>
     <div class="all-people">
@@ -25,8 +24,6 @@
       </div>
       <% }) %>
     </div>
-    <p class="aboutme"><%= user.aboutme %></p>
   </div>
-
 </body>
 </html>
