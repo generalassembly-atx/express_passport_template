@@ -36,7 +36,8 @@ a {
 .profilePic {
   float:left;
 }
-.everyoneBut {
+#everyoneBut {
+  margin-top: 10px;
   float:left;
 }
 .left-profile {
