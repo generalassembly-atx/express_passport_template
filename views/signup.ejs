@@ -1,17 +1,27 @@
 <% include partials/head %>
-
+<div class="signupBody">
   <h1>Signup</h1>
   <form method="post" action="/signup">
-    <div class="firstname">First Name: <input type="text" name="firstname"</div>
-    <div class="lastname">Last Name: <input type="text" name="lastname"></div>
-    <div class="emailz">  E-Mail: <input type="text" name="email"></div>
-    <div class="password">Password: <input type="password" name="password"></div>
-    <div class="phone">Phone: <input type="text" name="phone"></div>
-    <div class="profilepic">Profile Picture: <input type="text" name="image_url"></div>
-    <div class="location">Location: <input type="text" name="location" placeholder="optional"></div>
-    <div class="aboutme">About Me: <input type="text" name="aboutme" placeholder="optional"></div>
-    <div class="age">Age: <input type="text" name="age" placeholder="optional"></div>
+    <label for="firstname">First Name</label>
+      <div class="firstname" id="firstname"> <input type="text" name="firstname"></div>
+    <label for="lastname">Last Name</label>
+      <div class="lastname" id="lastname"> <input type="text" name="lastname"></div>
+    <label for="emailz">E-Mail</label>
+      <div class="emailz" id="emailz"> <input type="text" name="email"></div>
+    <label for="password">Password</label>
+      <div class="password" id="password"> <input type="password" name="password"></div>
+    <label for="phone">Phone</label>
+      <div class="phone" id="phone"> <input type="text" name="phone"></div>
+    <label for="profilepic">Profile Picture</label>
+      <div class="profilepic" id="profilepic"> <input type="text" name="image_url"></div>
+    <label for="location">Location</label>
+      <div class="location" id="location"> <input type="text" name="location" placeholder="optional"></div>
+    <label for="aboutme">About Me</label>
+      <div id="aboutme"> <input type="text" name="aboutme" placeholder="optional"></div>
+    <label for="age">Age</label>
+      <div class="age" id="age"> <input type="text" name="age" placeholder="optional"></div>
     <div class="button"><input type="submit" value="Create Profile"/></div>
   </form>
+</div>
 <% include partials/footer %>
 </html>

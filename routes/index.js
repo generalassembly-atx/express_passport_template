@@ -2,7 +2,9 @@ var express = require('express');
 var router = express.Router();
 var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
-var Friend = require('../models/friends');
+var Friend = require('../models/friend');
+
+>>>>>>> b40501a461e656a4e272e226faf49a29625721b8
 /* GET home page. */
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'DateHub' });
@@ -41,7 +43,7 @@ router.get('/frequest/:id', function(req, res, next) {
 router.post('/frequest/:id', function(req, res, next) {
   var newFriend = new Friend({
     userID1: req.params.id,
-    userID2: req.session.currentUser.id
+    userID2: req.session.currentUserID
   });
   newFriend.save(function(err, user){
     if (err) console.log(err);

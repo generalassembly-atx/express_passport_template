@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var bcryptjs = require('bcryptjs');
+var Friend = require('./friend')
 
 var SALT_WORK_FACTOR = 10;
 
@@ -12,7 +13,11 @@ var userSchema = new mongoose.Schema({
   image_url: {type: String, required:true },
   location: String,
   aboutme: String,
+<<<<<<< HEAD
   age: Number,
+=======
+  age: Number
+>>>>>>> b40501a461e656a4e272e226faf49a29625721b8
 });
 
 userSchema.pre('save', function(next) {
@@ -40,6 +45,22 @@ userSchema.methods.comparePassword = function(candidatePassword, cb) {
   bcryptjs.compare(candidatePassword, this.password, function(err, isMatch) {
     if (err) return cb(err);
     cb(null, isMatch);
+  });
+};
+
+userSchema.methods.findFriends = function(cb) {
+  var self = this;
+  Friend.find( { $or:[ {'userID1':this.id}, {'userID2':this.id} ]},
+   function(err,docs){
+     var friendIDs = docs.map(function(doc) {
+       if(doc.userID1 === this.id) {
+         return doc.userID2;
+       }
+       else { return doc.userID1; }
+     })
+     self.model('User').find({'_id': { $in:friendIDs }}, function(err, users) {
+       cb(err, users);
+     })
   });
 };
 
