@@ -5,7 +5,7 @@
   <div class="profile">
     <div class="left-profile">
       <h1> <%= user.firstname %> <%= user.lastname %> </h1>
-      <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;" alt="<%= user.firstname %>">
+      <img src="<%= user.image_url %>" style="max-height: 110px; max-width: 180px;" alt="<%= user.firstname %>">
       <h2 class="location"><%= user.location %></h2>
       <h2 class="age"><%= user.age %></h2>
       <form action="/<%= user._id %>/edit" method="get" >
