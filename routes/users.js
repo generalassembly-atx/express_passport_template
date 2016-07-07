@@ -20,4 +20,15 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.get('/frequest/:id', function(req, res, next) {
+  res.redirect('/everyone')
+});
+
+/* POST friend request ??????????*/
+router.post('/frequest/:id', function(req, res, next) {
+  var newFriend = new Friend({
+    userID1: req.params.id,
+    userID2: req.session._id
+  });
+});
 module.exports = router;

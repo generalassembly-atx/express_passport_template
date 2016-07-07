@@ -10,6 +10,9 @@
       <form action="/<%= user._id %>/edit" method="get" >
         <input type="submit" class="btn btn-primary" value="Edit">
       </form>
+      <form method="post" action="/frequest/<%= user._id%>">
+        <input id="everyoneBut"type="submit" class="btn btn-primary" value="Send Request"/>
+      </form>
     </div>
     <p class="aboutme"><%= user.aboutme %></p>
   </div>
