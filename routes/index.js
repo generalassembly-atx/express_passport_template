@@ -16,13 +16,8 @@ router.get('/:id/edit', function(req, res, next){
   User.findOne({_id: id }, function(err, user){
     if (err) console.log(err);
     // console.log(users);
-    res.render('everyone', { title: 'DateHub Main', users: users})
+    res.render('edit', { title: 'DateHub Main', user: user})
   });
-});
-
-/* GET signup page */
-router.get('/signup', function(req, res, next) {
-  res.render('signup', { title: 'DateHub: Signup'});
 });
 
 // UPDATE main profile page

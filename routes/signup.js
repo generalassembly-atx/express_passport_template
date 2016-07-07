@@ -8,6 +8,11 @@ router.get('/', function(req, res, next) {
   res.render('signup', { title: 'DateHub: Signup'});
 });
 
+/* GET signup page */
+router.get('/signup', function(req, res, next) {
+  res.render('signup', { title: 'DateHub: Signup'});
+});
+
 /* CREATE USER */
 router.post('/', function(req, res, next){
 
