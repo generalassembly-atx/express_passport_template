@@ -2,7 +2,11 @@ var express = require('express');
 var router = express.Router();
 var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
+<<<<<<< HEAD
 var Friend = require('../models/friends')
+=======
+var Friend = require('../models/friends');
+>>>>>>> f4ebc88ce8af1bc8f6a62d236446014e5aec1d83
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -47,6 +51,7 @@ router.post('/frequest/:id', function(req, res, next) {
   newFriend.save(function(err, user){
     if (err) console.log(err);
     res.redirect('everyone');
+
 });
 
 module.exports = router;
