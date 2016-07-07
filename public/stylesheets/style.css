@@ -21,7 +21,6 @@ a {
 
 .all-people {
   width:95%;
-  position:absolute;
 }
 .title {
   text-align: center;
@@ -59,7 +58,6 @@ label {
 .aboutme {
   width: 45%;
   float: left;
-  margin-top: 50px;
 }
 .user {
   width: 31%;
