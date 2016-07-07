@@ -42,10 +42,19 @@ router.get('/:id/edit', function(req, res, next){
   })
 });
 
+// UPDATE main profile page
+router.patch('/:id', function(req, res, next){
+  // redirect to show changes
+  User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+    if (err) console.log(err);
+    res.redirect('/profile/' + req.params.id);
+  })
+});
+
 /* GET another user's profile page */
 router.get('/profile/:id', function(req, res, next) {
   var id = req.params.id;
-  console.log(id);
+  // console.log(id);
   User.findById(id, function(err, user) {
     // console.log(user);
     res.render('profile', { title: 'DateHub: Profile', user:user});
