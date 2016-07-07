@@ -36,9 +36,18 @@ a {
 .profilePic {
   float:left;
 }
+label {
+  text-align: left;
+}
 #everyoneBut {
   margin-top: 10px;
   float:left;
+}
+.signupBody {
+  text-align: center;
+}
+.editBody {
+  text-align: center;
 }
 .left-profile {
   position: relative;

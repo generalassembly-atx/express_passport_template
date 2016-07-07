@@ -1,17 +1,26 @@
 <% include partials/head %>
-  <form action="/<%= user._id %>" method="POST">
-    <input type="hidden" name="_method" value="PATCH">
-
-    First Name: <input type="text" name="firstname" value="<%= user.firstname %>">
-    Last Name: <input type="text" name="lastname" value="<%= user.lastname %>">
-    Email: <input type="text" name="email" value="<%= user.email %>">
-    Password: <input type="password" name="password" value="<%= user.password %>">
-    Phone: <input type="text" name="phone" value="<%= user.phone %>">
-    Profile Pic: <input type="text" name="image_url" value="<%= user.image_url %>">
-    Location: <input type="text" name="location" value="<%= user.location %>">
-    About Me: <input type="text" name="aboutme" value="<%= user.aboutme %>">
-    Age: <input type="text" name="age" value="<%= user.age %>">
-    <input type="submit" value="Update User"/>
+<div class="editBody">
+  <form action="/profile/<%= user._id %>/" method="POST">
+    <label for="firstname">First Name</label>
+      <div class="firstname" id="firstname"> <input type="text" name="firstname"></div>
+    <label for="lastname">Last Name</label>
+      <div class="lastname" id="lastname"> <input type="text" name="lastname"></div>
+    <label for="emailz">E-Mail</label>
+      <div class="emailz" id="emailz"> <input type="text" name="email"></div>
+    <label for="password">Password</label>
+      <div class="password" id="password"> <input type="password" name="password"></div>
+    <label for="phone">Phone</label>
+      <div class="phone" id="phone"> <input type="text" name="phone"></div>
+    <label for="profilepic">Profile Picture</label>
+      <div class="profilepic" id="profilepic"> <input type="text" name="image_url"></div>
+    <label for="location">Location</label>
+      <div class="location" id="location"> <input type="text" name="location" placeholder="optional"></div>
+    <label for="aboutme">About Me</label>
+      <div id="aboutme"> <input type="text" name="aboutme" placeholder="optional"></div>
+    <label for="age">Age</label>
+      <div class="age" id="age"> <input type="text" name="age" placeholder="optional"></div>
+    <div class="button"><input type="submit" value="Create Profile" class="btn btn-primary"/></div>
   </form>
+</div>
 </body>
 </html>

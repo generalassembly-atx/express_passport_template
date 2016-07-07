@@ -3,7 +3,7 @@ var router = express.Router();
 var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
 
-var Friend = require('../models/friends');
+var Friend = require('../models/friend');
 
 /* GET another user's profile page */
 router.get('/:id', function(req, res, next) {
@@ -11,7 +11,10 @@ router.get('/:id', function(req, res, next) {
   // console.log(id);
   User.findById(id, function(err, user) {
     // console.log(user);
-    res.render('profile', { title: 'DateHub: Profile', user:user});
+    user.findFriends(function(err, friends) {
+      console.log(friends);
+      res.render('profile', { title: 'DateHub: Profile', user:user});
+    })
   })
 });
 
