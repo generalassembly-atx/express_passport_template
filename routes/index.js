@@ -32,10 +32,30 @@ router.get('/profile', function(req, res, next) {
   res.render('profile', { title: 'DateHub: Profile'});
 });
 
+// EDIT main profile page
+router.get('/:id/edit', function(req, res, next){
+  // get edit user form
+  var id = req.params.id;
+  User.findOne({_id: id }, function(err, user){
+    if (err) console.log(err);
+    res.render('edit', {title: 'DateHub: Edit', user: user})
+  })
+});
+
+// UPDATE main profile page
+router.patch('/:id', function(req, res, next){
+  // redirect to show changes
+  User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
+    if (err) console.log(err);
+    res.redirect('/profile/' + req.params.id);
+  })
+});
+
 /* GET another user's profile page */
 router.get('/profile/:id', function(req, res, next) {
-  // var id = req.params.id;
-  User.findById(req.params.id, function(err, user) {
+  var id = req.params.id;
+  // console.log(id);
+  User.findById(id, function(err, user) {
     // console.log(user);
     res.render('profile', { title: 'DateHub: Profile', user:user});
   })
