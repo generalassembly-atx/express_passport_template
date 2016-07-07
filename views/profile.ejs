@@ -17,6 +17,14 @@
 
       </div>
     </div>
+    <div class="all-people">
+      <% friends.forEach(function(user) { %>
+      <div class="user">
+        <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
+        <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
+      </div>
+      <% }) %>
+    </div>
     <p class="aboutme"><%= user.aboutme %></p>
   </div>
 
