@@ -13,7 +13,7 @@ router.get('/:id', function(req, res, next) {
     // console.log(user);
     user.findFriends(function(err, friends) {
       console.log(friends);
-      res.render('profile', { title: 'DateHub: Profile'});
+      res.render('profile', { title: 'DateHub: Profile', user: user, friends: friends});
     })
   })
 });

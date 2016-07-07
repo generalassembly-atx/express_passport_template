@@ -19,12 +19,14 @@
     </div>
     <p class="aboutme"><%= user.aboutme %></p>
 
-    <div>
-      <%= typeof user.friends!='undefined' ? user.friends : '' %>
-    </div>
-
   </div>
 
+  <div>
+    <% friends.forEach(function(user) { %>
+      <% console.log(user); %>
+      <%= user.firstname %>
+    <% }) %>
+  </div>
 
 </body>
 </html>
