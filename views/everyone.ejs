@@ -5,8 +5,8 @@
     <div class="all-people">
       <% users.forEach(function(user) { %>
       <div class="user">
-        <a class="userName" href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
-        <img class="profilePic" src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
+        <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
+        <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
       </div>
       <% }) %>
     </div>
