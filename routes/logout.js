@@ -7,7 +7,7 @@ var User = require('../models/user');
 router.get('/', function(req, res){
   req.session.destroy(function(){
   });
-  res.render('login', {title: 'DateHub: Login'})
+  res.render('index', {title: 'DateHub'})
 });
 
 
