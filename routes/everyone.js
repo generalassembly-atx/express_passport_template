@@ -4,7 +4,7 @@ var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
 
 /* GET main portal */
-router.get('/', function(req, res, next) {
+router.get('/', authWall, function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) console.log(err);
     // console.log(users);
