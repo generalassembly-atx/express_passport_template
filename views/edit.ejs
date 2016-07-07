@@ -1,26 +1,28 @@
 <% include partials/head %>
 <div class="editBody">
-  <form action="/profile/<%= user._id %>/" method="POST">
+
+  <form action="/<%= user._id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+
     <label for="firstname">First Name</label>
-      <div class="firstname" id="firstname"> <input type="text" name="firstname"></div>
+      <div class="firstname" id="firstname"><input type="text" class="firstname" name="firstname" value="<%= user.firstname %>"></div>
     <label for="lastname">Last Name</label>
-      <div class="lastname" id="lastname"> <input type="text" name="lastname"></div>
-    <label for="emailz">E-Mail</label>
-      <div class="emailz" id="emailz"> <input type="text" name="email"></div>
+      <div class="lastname" id="lastname"><input type="text" class="lastname" name="lastname" value="<%= user.lastname %>"></div>
+    <label for="email">E-Mail</label>
+      <div class="email" id="email"><input type="text" class="email" name="email" value="<%= user.email %>"></div>
     <label for="password">Password</label>
-      <div class="password" id="password"> <input type="password" name="password"></div>
+      <div class="password" id="password"><input type="password" class="password" name="password" value="<%= user.password %>"></div>
     <label for="phone">Phone</label>
-      <div class="phone" id="phone"> <input type="text" name="phone"></div>
-    <label for="profilepic">Profile Picture</label>
-      <div class="profilepic" id="profilepic"> <input type="text" name="image_url"></div>
+      <div class="phone" id="phone"><input type="text" class="phone" name="phone" value="<%= user.phone %>"></div>
+    <label for="profilepic">Profile Pic</label>
+      <div class="profilepic" id="profilepic"><input type="text" class="profilepic" name="image_url" value="<%= user.image_url %>"></div>
     <label for="location">Location</label>
-      <div class="location" id="location"> <input type="text" name="location" placeholder="optional"></div>
-    <label for="aboutme">About Me</label>
-      <div id="aboutme"> <input type="text" name="aboutme" placeholder="optional"></div>
+      <div class="location" id="location"><input type="text" class="location" name="location" value="<%= user.location %>"></div>
+    <label for="about-me">About Me</label>
+      <div class="about-me" id="about-me"><input type="text" class="about-me" name="aboutme" value="<%= user.aboutme %>"></div>
     <label for="age">Age</label>
-      <div class="age" id="age"> <input type="text" name="age" placeholder="optional"></div>
-    <div class="button"><input type="submit" value="Create Profile" class="btn btn-primary"/></div>
+      <div class="age" id="age"><input type="text" class="age" name="age" value="<%= user.age %>"></div>
+    <input type="submit" value="Update User" class="btn btn-primary"/>
   </form>
 </div>
-</body>
 </html>

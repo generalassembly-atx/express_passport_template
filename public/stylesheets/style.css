@@ -40,8 +40,10 @@ label {
   text-align: left;
 }
 #everyoneBut {
-  margin-top: 10px;
   float:left;
+}
+.btn {
+  margin-top: 10px;
 }
 .signupBody {
   text-align: center;
