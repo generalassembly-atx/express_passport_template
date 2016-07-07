@@ -6,6 +6,9 @@
   <h1> <%= user.location %></h1>
   <h1> <%= user.aboutme %></h1>
   <h1> <%= user.age %></h1>
+  <form method="post" action="/frequest/<%= user._id%>">
+    <input type="submit" class="btn btn-primary" value="Send Request"/>
+  </form>
 
 
 </body>
