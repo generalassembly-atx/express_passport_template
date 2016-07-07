@@ -13,7 +13,6 @@ var userSchema = new mongoose.Schema({
   location: String,
   aboutme: String,
   age: Number,
-  friends: {type: Array}
 });
 
 userSchema.pre('save', function(next) {
