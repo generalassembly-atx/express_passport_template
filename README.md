@@ -9,7 +9,7 @@ Visit https://gentle-shore-24171.herokuapp.com/ to go to the page
 Sign up as a new user and then login to your user with your email address and password
     -the phone number and age must be a number, no other characters.
 
-Navigate to the other users page to view other users, or go back to your profile and edit your profile information
+Navigate to the "everyone" page to view other users and see their friends, or go back to your profile and edit your profile information.
 
 
 Unsolved problems:

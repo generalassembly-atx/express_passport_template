@@ -1,7 +1,6 @@
 <% include partials/head %>
-<body>
   <% include partials/navbar %>
-
+  <body>
   <div class="profile">
     <div class="left-profile">
       <h1> <%= user.firstname %> <%= user.lastname %> </h1>
@@ -17,17 +16,18 @@
 
       </div>
     </div>
-    <div class="all-people">
+
+    <%if (friends) { %>
       <% friends.forEach(function(user) { %>
       <div class="user">
         <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
         <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
       </div>
-      <% }) %>
-    </div>
+      <% }); %>
+    <% } %>
+
+
     <p class="aboutme"><%= user.aboutme %></p>
-
   </div>
-
 </body>
 </html>
