@@ -18,6 +18,11 @@
       </div>
     </div>
     <p class="aboutme"><%= user.aboutme %></p>
+
+    <div>
+      <%= typeof user.friends!='undefined' ? user.friends : '' %>
+    </div>
+
   </div>
 
 
