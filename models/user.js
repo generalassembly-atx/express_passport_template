@@ -12,8 +12,7 @@ var userSchema = new mongoose.Schema({
   image_url: {type: String, required:true },
   location: String,
   aboutme: String,
-  age: Number,
-  friends: {type: Array}
+  age: Number
 });
 
 userSchema.pre('save', function(next) {

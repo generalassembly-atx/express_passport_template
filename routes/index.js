@@ -38,7 +38,6 @@ router.post('/frequest/:id', function(req, res, next) {
     userID1: req.params.id,
     userID2: req.session.currentUser.id
   });
-console.log()
   newFriend.save(function(err, user){
     if (err) console.log(err);
     res.redirect('everyone');
