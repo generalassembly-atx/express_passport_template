@@ -3,11 +3,13 @@
   <span class="container" id="login-body">
     <h1>Login</h1>
       <form method="post" action="/login">
-        <div class="email">
-          Email: <input type="text" name="email">
+        <label for="email">E-Mail</label>
+        <div class="email" id="email">
+          <input type="text" name="email">
         </div>
-        <div class="password">
-          Password: <input type="password" name="password">
+        <label for="password">Password</label>
+        <div class="password" id="password">
+          <input type="password" name="password">
         </div>
         <div class="subbutton">
           <input type="submit" class="btn btn-primary" value="Login"/>

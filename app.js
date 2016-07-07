@@ -95,7 +95,6 @@ app.use(function(req, res, next) {
   if (req.session.currentUserID) {
     User.findById(req.session.currentUserID, function(err, user) {
       if (err) return next(err);
-      console.log(user);
       req.session.currentUser = user;
       next();
     });
@@ -106,7 +105,6 @@ app.use(function(req, res, next) {
 });
 
 app.use(function(req, res, next) {
-  console.log(req.session.currentUser);
   res.locals.user = req.session.currentUser || null;
   next();
 });
