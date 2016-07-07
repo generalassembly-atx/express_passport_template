@@ -44,9 +44,7 @@ router.get('/profile/:id', function(req, res, next) {
 /* POST friend request */
 router.post('/frequest/:id', function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
-    req.session.currentUserFriends.push(user.id);
-    console.log(req.session.currentUserFriends);
-    res.redirect('/profile')
+    //do STUFF
   })
 })
 /* LOG OUT */
