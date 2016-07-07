@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var authWall = require('../lib/auth_wall');
 var User = require('../models/user');
+var Friend = require('../models/friends');
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
@@ -27,11 +28,21 @@ router.patch('/:id', function(req, res, next){
   })
 });
 
-/* POST friend request */
+router.get('/frequest/:id', function(req, res, next) {
+  res.redirect('/everyone')
+});
+
+/* POST friend request ??????????*/
 router.post('/frequest/:id', function(req, res, next) {
-  User.findById(req.params.id, function(err, user) {
-    //do STUFF
-  })
-})
+  var newFriend = new Friend({
+    userID1: req.params.id,
+    userID2: req.session.currentUser.id
+  });
+console.log()
+  newFriend.save(function(err, user){
+    if (err) console.log(err);
+    res.redirect('everyone');
+  });
+});
 
 module.exports = router;

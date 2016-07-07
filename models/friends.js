@@ -1,9 +1,10 @@
 var mongoose = require('mongoose');
 
 var friendSchema = new mongoose.Schema({
-  created_at: {type: Date, required: true, default: Date.now},
+  userID1:  String,
+  userID2: String
+});
 
-})
 
-var Profile = mongoose.model('Profile', profileSchema);
-module.exports = mongoose.model('profiles', profileSchema);
+var Friend = mongoose.model('Friend', friendSchema);
+module.exports = mongoose.model('friends', friendSchema);
