@@ -16,7 +16,7 @@ router.get('/login', function(req, res, next) {
 router.get('/everyone', function(req, res, next) {
   User.find({}, function(err, users) {
     if (err) console.log(err);
-    // console.log(users);
+    console.log(users);
     res.render('everyone', { title: 'DateHub: Main', users: users})
   });
 });
@@ -38,7 +38,7 @@ router.get('/:id/edit', function(req, res, next){
   var id = req.params.id;
   User.findOne({_id: id }, function(err, user){
     if (err) console.log(err);
-    res.render('edit', {user: user})
+    res.render('edit', {title: 'DateHub: Edit', user: user})
   })
 });
 
@@ -64,9 +64,7 @@ router.get('/profile/:id', function(req, res, next) {
 /* POST friend request */
 router.post('/frequest/:id', function(req, res, next) {
   User.findById(req.params.id, function(err, user) {
-    req.session.currentUserFriends.push(user.id);
-    console.log(req.session.currentUserFriends);
-    res.redirect('/profile')
+    //do STUFF
   })
 })
 /* LOG OUT */
@@ -113,6 +111,5 @@ router.post('/signup', function(req, res, next){
     res.redirect('login')
   })
 });
-
 
 module.exports = router;

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Edit Your User Information</title>
-</head>
-<body>
-
+<% include partials/head %>
   <form action="/<%= user._id %>" method="POST">
     <input type="hidden" name="_method" value="PATCH">
 

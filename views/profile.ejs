@@ -1,12 +1,11 @@
 <% include partials/head %>
 <body>
   <% include partials/navbar %>
-  <h1> Hello, <%= user.firstname %></h1>
+  <h1> <%= user.firstname %> <%= user.lastname %> </h1>
   <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;" alt="<%= user.firstname %>">
-  <h1> <%= user.location %></h1>
-  <h1> <%= user.aboutme %></h1>
-  <h1> <%= user.age %></h1>
-
+  <h1><%= user.location %></h1>
+  <h1><%= user.aboutme %></h1>
+  <h1><%= user.age %></h1>
   <form action="/<%= user._id %>/edit" method="get" >
     <input type="submit" class="btn btn-primary" value="Edit">
   </form>
