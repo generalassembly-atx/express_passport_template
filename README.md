@@ -4,7 +4,7 @@ We wanted the app to allow a user to sign up with user details and log in to the
 
 Installation instructions:
 
-Visit https://gentle-shore-24171.herokuapp.com/ to go to the page
+Visit http://datehub.herokuapp.com/ to go to the page
 
 Sign up as a new user and then login to your user with your email address and password
     -the phone number and age must be a number.
@@ -26,3 +26,8 @@ Wireframes - http://imgur.com/t1sT84m
 User Stories - http://imgur.com/eMw0ENC
 
 ERD - http://imgur.com/5xjoKzo
+
+
+We are pretty excited with what we were able to come up with after only 5 weeks of class and 4 and a half days to do our first group project.
+
+Thanks for checking it out!
