@@ -1,7 +1,6 @@
 <% include partials/head%>
   <% include partials/navbar%>
   <body>
-    <h1><%= title %></h1>
     <div class="all-people">
       <% users.forEach(function(user) { %>
       <div class="user">
@@ -10,6 +9,6 @@
       </div>
       <% }) %>
     </div>
-
+    <% include partials/footer %>
   </body>
 </html>
