@@ -44,7 +44,7 @@ router.post('/frequest/:id', function(req, res, next) {
   });
 
 });
-
+// TEST //*
 // DELETE FRIENDSHIP
 // router.delete('/profile/:id', function(req, res, next){
 //   // redirect to index
