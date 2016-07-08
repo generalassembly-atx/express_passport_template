@@ -22,10 +22,11 @@
       <div class="userPro">
         <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
         <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
-        <form action="/profile/<%= profileUser._id %>" method="post">
+        <p>Hey! Where do you live? I'm over here in <%=user.location%></p>
+<!--         <form action="/profile/<%= profileUser._id %>" method="post">
           <input type="hidden" name="_method" value="delete">
           <input class="btn btn-primary" type="submit" value="DELETE">
-        </form>
+        </form> -->
       </div>
       <% }) %>
     <% } %>
