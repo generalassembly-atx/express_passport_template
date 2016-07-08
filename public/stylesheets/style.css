@@ -73,3 +73,19 @@ background: url(http://healthiestplace.com/wp-content/uploads/2016/06/relationsh
   padding: 10px;
   margin: 5px;
 }
+
+.myPage {
+  background-color:   #EFEDD6;
+}
+.aboutme {
+  font-size: 18px;
+}
+.left-profile {
+  display: inline-block;
+}
+.myPeople{
+  display: inline-block;
+}
+
+
+
