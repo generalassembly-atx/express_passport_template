@@ -23,6 +23,7 @@ router.post('/', function(req, res, next){
     password: req.body.password,
     phone: req.body.phone,
     image_url: req.body.image_url,
+    catchphrase: req.body.catchphrase,
     location: req.body.location,
     aboutme: req.body.aboutme,
     age: req.body.age
