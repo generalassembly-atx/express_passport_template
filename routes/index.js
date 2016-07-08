@@ -45,7 +45,7 @@ router.post('/frequest/:id', function(req, res, next) {
 });
 
 // DELETE FRIENDSHIP
-router.delete('/:id', function(req, res, next){
+router.delete('/profile/:id', function(req, res, next){
   // redirect to index
   Friend.findByIdAndRemove(req.params.id, req.body, function(err, friend){
     if (err) console.log(err);

@@ -12,11 +12,13 @@ router.get('/:id', function(req, res, next) {
   User.findById(id, function(err, user) {
     // console.log(user);
     user.findFriends(function(err, friends) {
-      console.log(friends);
+      // console.log(friends);
       res.render('profile', { title: 'DateHub: Profile', friends: friends, profileUser: user });
     })
   })
 });
+
+
 
 /* GET main profile page */
 // router.get('/', function(req, res, next) {

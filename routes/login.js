@@ -25,11 +25,4 @@ router.get('/', function(req, res, next) {
   res.render('login', { title: 'DateHub: Login'});
 });
 
-
-
-
-
-
-
-
 module.exports = router;
