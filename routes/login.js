@@ -9,8 +9,6 @@ router.post('/', function(req, res, next) {
    user.comparePassword(req.body.password, function(err, isMatch) {
      if (isMatch) {
        req.session.currentUserID = user.id;
-       // console.log(req.session);
-       console.log('is match', isMatch);
        res.redirect('/profile/' + req.session.currentUserID);
      }
      else {

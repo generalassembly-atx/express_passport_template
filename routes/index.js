@@ -10,18 +10,17 @@ router.get('/', function(req, res, next) {
 });
 
 // EDIT main profile page
-router.get('/:id/edit', function(req, res, next){
+router.get('/:id/edit', authWall, function(req, res, next){
   // get edit user form
   var id = req.params.id;
   User.findOne({_id: id }, function(err, user){
     if (err) console.log(err);
-    // console.log(users);
     res.render('edit', { title: 'DateHub Main', user: user})
   });
 });
 
 // UPDATE main profile page
-router.patch('/:id', function(req, res, next){
+router.patch('/:id', authWall, function(req, res, next){
   // redirect to show changes
   User.findByIdAndUpdate(req.params.id, req.body, function(err, user){
     if (err) console.log(err);
@@ -49,7 +48,7 @@ router.post('/frequest/:id', function(req, res, next) {
 // DELETE FRIENDSHIP
 // router.delete('/profile/:id', function(req, res, next){
 //   // redirect to index
-//   Friend.findOneAndRemove(req.params.id, req.body, function(err, friend){
+//   Friend.findByIdAndRemove(req.params.id, req.body, function(err, friend){
 //     if (err) console.log(err);
 //     res.redirect('/profile/' + req.params.id);
 //   })
