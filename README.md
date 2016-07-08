@@ -1,5 +1,9 @@
 We have built a social media app using a Node.js runtime environment and MongoDB as our database. We used Express.js as our framework in making this application.
 
+Problem we wanted to solve:
+
+To have a site where developers can meet without without having to answer those dozens of questions.
+
 We wanted the app to allow a user to sign up with user details and log in to their page that would show their account. We also wanted users to have a link to see a list of all of the users of the app and be able to friend another user and leave them a comment.
 
 Installation instructions:
