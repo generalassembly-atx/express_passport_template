@@ -26,3 +26,8 @@ Wireframes - http://imgur.com/t1sT84m
 User Stories - http://imgur.com/eMw0ENC
 
 ERD - http://imgur.com/5xjoKzo
+
+
+We are pretty excited with what we were able to come up with after only 5 weeks of class and 4 and a half days to do our first group project.
+
+Thanks for checking it out!
