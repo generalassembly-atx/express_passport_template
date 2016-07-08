@@ -19,3 +19,10 @@ Unsolved problems:
 -Delete button for friendships - had route and button set up. Was able to get console to show that it was registering the delete, but ran short on time for figuring out what FindOneAndRemove should actually remove.
 
 -If someone matches with you, it shows that you are matched with yourself on your profile page.
+
+
+Wireframes - http://imgur.com/t1sT84m
+
+User Stories - http://imgur.com/eMw0ENC
+
+ERD - http://imgur.com/5xjoKzo
