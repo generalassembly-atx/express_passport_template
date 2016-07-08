@@ -1,10 +1,10 @@
 <% include partials/head %>
   <% include partials/navbar %>
-  <body>
+  <body class="myPage">
   <div class="profile">
     <div class="left-profile">
       <h1> <%= profileUser.firstname %> <%= profileUser.lastname %> </h1>
-      <img src="<%= profileUser.image_url %>" style="max-height: 100px; max-width: 100px;" alt="<%= user.firstname %>">
+      <img src="<%= profileUser.image_url %>" style="max-height: 250px; max-width: 350px;" alt="<%= user.firstname %>">
       <h2 class="location"><%= profileUser.location %></h2>
       <h2 class="age"><%= profileUser.age %></h2>
       <form action="/<%= user._id %>/edit" method="get" >
@@ -14,7 +14,8 @@
         <input id="everyoneBut"type="submit" class="btn btn-primary" value="+Match"/>
       </form>
     </div>
-    <p class="aboutme"><%= user.aboutme %></p>
+    <p class="aboutme"><%= profileUser.aboutme %></p>
+
     <div class="myPeople">
     <%if(friends) { %>
       <% friends.forEach(function(user) { %>
