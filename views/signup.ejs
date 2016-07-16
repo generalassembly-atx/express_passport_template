@@ -1,0 +1,30 @@
+<% include partials/head %>
+<body class="heropage">
+<div class="signupBody">
+  <h1>Signup</h1>
+  <form method="post" action="/signup">
+    <label for="firstname">First Name</label>
+      <div class="firstname" id="firstname"> <input type="text" name="firstname"></div>
+    <label for="lastname">Last Name</label>
+      <div class="lastname" id="lastname"> <input type="text" name="lastname"></div>
+    <label for="emailz">E-Mail</label>
+      <div class="emailz" id="emailz"> <input type="text" name="email"></div>
+    <label for="password">Password</label>
+      <div class="password" id="password"> <input type="password" name="password"></div>
+    <label for="phone">Phone</label>
+      <div class="phone" id="phone"> <input type="text" name="phone"></div>
+    <label for="profilepic">Profile Picture</label>
+      <div class="profilepic" id="profilepic"> <input type="text" name="image_url"></div>
+    <label for="location">Location</label>
+      <div class="location" id="location"> <input type="text" name="location" placeholder="optional"></div>
+    <label for="catchphrase">Catchphrase</label>
+      <div id="catchphrase"> <input type="text" name="catchphrase" placeholder="optional"></div>
+    <label for="aboutme">About Me</label>
+      <div id="aboutme"> <input type="text" name="aboutme" placeholder="optional"></div>
+    <label for="age">Age</label>
+      <div class="age" id="age"> <input type="text" name="age" placeholder="optional"></div>
+    <div class="button"><input class="btn btn-primary" type="submit" value="Create Profile"/></div>
+  </form>
+</div>
+</body>
+</html>

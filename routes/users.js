@@ -9,12 +9,7 @@ router.get('/', authWall, function(req, res, next) {
   res.send("Welcome back, " + req.user.email);
 });
 
-/* GET home page. */
-router.get('/new', function(req, res, next) {
-  res.render('users/new', { title: 'Express' });
-});
-
-/* GET home page. */
+/* POST signup form */
 router.post('/', function(req, res, next) {
   var user = new User(req.body);
 
@@ -25,4 +20,15 @@ router.post('/', function(req, res, next) {
   });
 });
 
+router.get('/frequest/:id', function(req, res, next) {
+  res.redirect('/everyone')
+});
+
+/* POST friend request ??????????*/
+router.post('/frequest/:id', function(req, res, next) {
+  var newFriend = new Friend({
+    userID1: req.params.id,
+    userID2: req.session._id
+  });
+});
 module.exports = router;

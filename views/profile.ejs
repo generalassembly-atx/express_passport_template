@@ -1,0 +1,35 @@
+<% include partials/head %>
+  <% include partials/navbar %>
+  <body class="myPage">
+  <div class="profile">
+    <div class="left-profile">
+      <h1> <%= profileUser.firstname %> <%= profileUser.lastname %> </h1>
+      <img src="<%= profileUser.image_url %>" style="max-height: 250px; max-width: 350px;" alt="<%= user.firstname %>">
+      <h2 class="location"><%= profileUser.location %></h2>
+      <h2 class="age"><%= profileUser.age %></h2>
+      <form action="/<%= user._id %>/edit" method="get" >
+        <input type="submit" class="btn btn-primary" value="Edit">
+      </form>
+      <form method="post" action="/frequest/<%= profileUser._id%>">
+        <input id="everyoneBut"type="submit" class="btn btn-primary" value="+Match"/>
+      </form>
+    </div>
+    <p class="catchPhrase"><%= profileUser.catchphrase %></p>
+    <p class="aboutme"><%= profileUser.aboutme %></p>
+
+    <div class="myPeople">
+    <%if(friends) { %>
+      <% friends.forEach(function(user) { %>
+      <div class="userPro">
+        <a href="/profile/<%= user._id%>"> <%= user.firstname %> <%= user.lastname %> </a>
+        <img src="<%= user.image_url %>" style="max-height: 100px; max-width: 100px;"/>
+        <!-- <form action="/profile/<%= profileUser._id %>" method="post">
+          <input type="hidden" name="_method" value="delete">
+
+        </form> -->
+      </div>
+      <% }) %>
+    <% } %>
+  </div>
+</body>
+</html>

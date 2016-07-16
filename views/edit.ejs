@@ -1,0 +1,30 @@
+<% include partials/head %>
+<div class="editBody">
+
+  <form action="/<%= user._id %>" method="POST">
+    <input type="hidden" name="_method" value="PATCH">
+
+    <label for="firstname">First Name</label>
+      <div class="firstname" id="firstname"><input type="text" class="firstname" name="firstname" value="<%= user.firstname %>"></div>
+    <label for="lastname">Last Name</label>
+      <div class="lastname" id="lastname"><input type="text" class="lastname" name="lastname" value="<%= user.lastname %>"></div>
+    <label for="email">E-Mail</label>
+      <div class="email" id="email"><input type="text" class="email" name="email" value="<%= user.email %>"></div>
+    <label for="password">Password</label>
+      <div class="password" id="password"><input type="password" class="password" name="password" value="<%= user.password %>"></div>
+    <label for="phone">Phone</label>
+      <div class="phone" id="phone"><input type="text" class="phone" name="phone" value="<%= user.phone %>"></div>
+    <label for="profilepic">Profile Pic</label>
+      <div class="profilepic" id="profilepic"><input type="text" class="profilepic" name="image_url" value="<%= user.image_url %>"></div>
+    <label for="catchphrase">Catchphrase</label>
+      <div class="catchphrase" id="catchphrase"><input type="text" class="catchphrase" name="catchphrase" value="<%= user.catchphrase %>"></div>
+    <label for="location">Location</label>
+      <div class="location" id="location"><input type="text" class="location" name="location" value="<%= user.location %>"></div>
+    <label for="about-me">About Me</label>
+      <div class="about-me" id="about-me"><input type="text" class="about-me" name="aboutme" value="<%= user.aboutme %>"></div>
+    <label for="age">Age</label>
+      <div class="age" id="age"><input type="text" class="age" name="age" value="<%= user.age %>"></div>
+    <input type="submit" value="Update User" class="btn btn-primary"/>
+  </form>
+</div>
+</html>
